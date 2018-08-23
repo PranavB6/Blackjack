@@ -1,6 +1,5 @@
 from assests.Card import Card
-from assests.Player import Player
-from assests.Computer import Computer
+from assests.Players import *
 from random import shuffle
 import queue
 
@@ -10,9 +9,14 @@ def main():
     player = Player(cards)
     computer = Computer(cards)
 
-    
+    player.peak()
+    computer.peak()
 
-    
+    pot = player.bet()
+    pot += computer.bet(pot)
+
+    player.peak()
+    computer.peak()
 
     
     return
